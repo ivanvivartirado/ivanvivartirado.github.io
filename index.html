@@ -4,11 +4,324 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ivan Vivar Tirado - Portfolio</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <!-- BARRA LATERAL -->
+=======
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            --accent: #0ea5e9;
+            --accent-hover: #06b6d4;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --text-muted: #64748b;
+            --glass: rgba(15, 23, 42, 0.78);
+            --border: rgba(148, 163, 184, 0.14);
+            --border-hover: rgba(14, 165, 233, 0.25);
+            --shadow: rgba(0, 0, 0, 0.35);
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body { min-height: 100%; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: linear-gradient(135deg, #020617 0%, #0f172a 45%, #1e293b 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(1200px, calc(100% - 32px));
+            min-height: 90vh;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 24px;
+            padding: 20px;
+        }
+
+        .sidebar, .window {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: 0 30px 80px var(--shadow);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            padding: 30px 24px 18px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-header .avatar {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: #030712;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.3);
+        }
+
+        .sidebar-header h1 { font-size: 1.25rem; letter-spacing: 0.02em; margin-bottom: 6px; }
+        .sidebar-header .role { font-size: 0.9rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+
+        .nav-menu { display: flex; flex-direction: column; gap: 10px; padding: 18px 16px; }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text-dim);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--accent);
+            background: rgba(14, 165, 233, 0.12);
+        }
+
+        .nav-item.active {
+            border-left: 3px solid var(--accent);
+            padding-left: 11px;
+        }
+
+        .icon { display: inline-flex; font-size: 0.86rem; color: var(--accent); }
+
+        .sidebar-footer {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 22px 16px 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .social-link {
+            flex: 1 1 calc(50% - 6px);
+            min-width: 96px;
+            text-align: center;
+            padding: 12px 0;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: rgba(14, 165, 233, 0.12);
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .social-link:hover { background: rgba(14, 165, 233, 0.22); border-color: var(--accent); }
+
+        .main { min-height: 0; display: flex; }
+
+        .window { width: 100%; display: flex; flex-direction: column; overflow: hidden; }
+
+        .window-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 18px 22px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .terminal-title { font-family: 'JetBrains Mono', monospace; color: var(--text-dim); font-size: 0.95rem; }
+
+        .window-controls { display: flex; gap: 10px; }
+
+        .control { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.18); }
+        .control:nth-child(1) { background: #ff5f56; }
+        .control:nth-child(2) { background: #ffbd2e; }
+        .control:nth-child(3) { background: #27c93f; }
+
+        .window-content { padding: 26px; overflow: auto; min-height: 0; flex: 1; }
+
+        .display { display: flex; flex-direction: column; gap: 26px; transition: opacity 0.15s ease; }
+        .display.fade-out { opacity: 0; }
+
+        .section-header h1, .section-header h2 { font-size: clamp(1.4rem, 2.2vw, 2.3rem); line-height: 1.1; }
+        .section-header p { margin-top: 10px; color: var(--text-dim); max-width: 720px; line-height: 1.7; }
+
+        .highlight { color: var(--accent); }
+        .subtitle { font-size: 0.98rem; }
+        .location { margin-top: 8px; color: var(--text-dim); font-size: 0.95rem; }
+
+        .card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
+            padding: 22px;
+            line-height: 1.8;
+        }
+
+        .primary-card { background: rgba(14,165,233,0.08); border-color: rgba(14,165,233,0.16); }
+
+        .card-header h3 { margin-bottom: 16px; color: var(--accent); font-size: 1rem; letter-spacing: 0.02em; }
+
+        .skills-grid, .contact-grid, .projects-grid { display: grid; gap: 16px; }
+        .skills-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+
+        .skill-badge, .project-card, .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .skill-badge { justify-content: flex-start; }
+        .skill-icon { font-size: 1.1rem; }
+
+        .tech-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+
+        .tech-tag {
+            display: inline-flex;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(14,165,233,0.15);
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+
+        .timeline { display: grid; gap: 20px; }
+
+        .timeline-item { display: grid; grid-template-columns: 28px 1fr; gap: 16px; }
+
+        .timeline-marker {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 6px rgba(14,165,233,0.1);
+            margin-top: 10px;
+        }
+
+        .timeline-content .card { padding: 20px; }
+
+        .date, .company { color: var(--text-dim); }
+
+        .tasks-list { margin-top: 14px; padding-left: 0; list-style: none; line-height: 1.8; color: var(--text-dim); }
+        .tasks-list li { margin-bottom: 4px; }
+
+        .projects-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+        .project-card { flex-direction: column; min-height: 220px; align-items: flex-start; }
+
+        .project-header { display: flex; justify-content: space-between; gap: 12px; align-items: center; width: 100%; }
+
+        .badge, .badge-featured {
+            display: inline-flex;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(14,165,233,0.15);
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .badge-featured { background: rgba(14,165,233,0.25); }
+
+        .project-desc { color: var(--text-dim); line-height: 1.7; margin-top: 8px; }
+
+        .project-link, .contact-link, .cta-button {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: auto;
+        }
+
+        .project-link:hover, .contact-link:hover { text-decoration: underline; }
+
+        .skills-matrix { display: grid; gap: 18px; margin-top: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        .skill-group h4 { margin-bottom: 10px; color: var(--accent); }
+        .skill-group ul { padding-left: 20px; line-height: 1.75; color: var(--text-dim); }
+
+        .contact-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+        .contact-card { flex-direction: column; min-height: 120px; align-items: flex-start; overflow: hidden; }
+        .contact-card .contact-link { word-break: break-all; overflow-wrap: anywhere; }
+        .contact-card h3 { margin-bottom: 10px; }
+        .contact-info { color: var(--text-dim); line-height: 1.7; }
+
+        .cta-section {
+            margin-top: 22px;
+            padding: 20px;
+            border-radius: 18px;
+            background: rgba(14,165,233,0.08);
+            border: 1px solid rgba(14,165,233,0.16);
+        }
+
+        .cta-section p { margin-bottom: 14px; color: var(--text-dim); line-height: 1.75; }
+
+        .cta-button {
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: rgba(14,165,233,0.17);
+            transition: var(--transition);
+        }
+
+        .cta-button:hover { background: rgba(14,165,233,0.30); }
+
+        h2 { font-size: clamp(1.2rem, 2vw, 1.8rem); }
+
+        @media (max-width: 960px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar { grid-row: 1; }
+        }
+
+        @media (max-width: 720px) {
+            .container { padding: 16px; }
+            .sidebar, .window { border-radius: 20px; }
+            .window-header { flex-direction: column; align-items: flex-start; }
+            .nav-item { font-size: 0.93rem; }
+            .social-link { flex: 1 1 100%; }
+            .skills-grid, .projects-grid, .contact-grid, .timeline { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+>>>>>>> 04667f0 ({Portafolio realizado(Faltan cambios)})
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="avatar">IVT</div>
@@ -17,6 +330,7 @@
             </div>
 
             <nav class="nav-menu">
+<<<<<<< HEAD
                 <a href="#" class="nav-item active" data-section="perfil">
                     <span class="icon">◆</span>
                     <span>Perfil</span>
@@ -50,6 +364,28 @@
         </aside>
 
         <!-- CONTENIDO PRINCIPAL -->
+=======
+                <button class="nav-item active" onclick="showSection('home', this)">
+                    <span class="icon">◆</span><span>Perfil</span>
+                </button>
+                <button class="nav-item" onclick="showSection('experience', this)">
+                    <span class="icon">◆</span><span>Experiencia</span>
+                </button>
+                <button class="nav-item" onclick="showSection('projects', this)">
+                    <span class="icon">◆</span><span>Proyectos</span>
+                </button>
+                <button class="nav-item" onclick="showSection('contact', this)">
+                    <span class="icon">◆</span><span>Contacto</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="https://linkedin.com/in/ivanvivartirado" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://github.com/x1b1t0" target="_blank" class="social-link">GitHub</a>
+            </div>
+        </aside>
+
+>>>>>>> 04667f0 ({Portafolio realizado(Faltan cambios)})
         <main class="main">
             <div class="window">
                 <div class="window-header">
@@ -60,16 +396,267 @@
                         <span class="control"></span>
                     </div>
                 </div>
+<<<<<<< HEAD
 
                 <div class="window-content">
                     <div id="display" class="display">
                         <!-- El contenido se inyecta aquí -->
                     </div>
+=======
+                <div class="window-content">
+                    <div id="display" class="display"></div>
+>>>>>>> 04667f0 ({Portafolio realizado(Faltan cambios)})
                 </div>
             </div>
         </main>
     </div>
 
+<<<<<<< HEAD
     <script src="script.js"></script>
 </body>
 </html>
+=======
+    <script>
+        const content = {
+            home: `
+                <div class="section-header">
+                    <h1>Ivan <span class="highlight">Vivar Tirado</span></h1>
+                    <p class="subtitle">> Administrador de Sistemas (ASIR) | Especialista en Redes y Seguridad</p>
+                    <p class="location">📍 Santa Coloma de Gramanet, Barcelona</p>
+                </div>
+
+                <div class="card primary-card">
+                    <div class="card-header"><h3>// Sobre mí</h3></div>
+                    <p>Soy una persona tranquila, paciente y sociable, con gran capacidad de adaptación. Aprendo rápido de forma autodidacta y me integro fácilmente en equipos y nuevos entornos de trabajo.</p>
+                    <p style="margin-top:10px"><strong>Apasionado por:</strong> La tecnología, el soporte técnico y la <span class="highlight">ciberseguridad</span>.</p>
+                    <p style="margin-top:10px">📱 <strong>Contacto directo:</strong> <span class="highlight">694 43 82 27</span></p>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom:16px;color:var(--accent)">// Certificaciones y Competencias</h3>
+                    <div class="skills-grid">
+                        <div class="skill-badge"><span class="skill-icon">🎓</span><span>EF SET English B1</span></div>
+                        <div class="skill-badge"><span class="skill-icon">🔒</span><span>Cisco: Cybersecurity</span></div>
+                        <div class="skill-badge"><span class="skill-icon">🌐</span><span>Cisco: Networking</span></div>
+                        <div class="skill-badge"><span class="skill-icon">⚙️</span><span>Admin. Redes Win/Linux</span></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom:16px;color:var(--accent)">// Stack Técnico</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">Linux</span>
+                        <span class="tech-tag">Bash/Shell</span>
+                        <span class="tech-tag">Podman</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Networking</span>
+                        <span class="tech-tag">Cisco IOS</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Active Directory</span>
+                    </div>
+                </div>
+            `,
+
+            experience: `
+                <div class="section-header">
+                    <h2>Experiencia Profesional</h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="card">
+                                <h3 class="highlight">💼 Técnico Soporte IT</h3>
+                                <p class="date">📅 Septiembre 2024 - Febrero 2025</p>
+                                <p class="company"><strong>Instituto Pompeu Fabra</strong></p>
+                                <ul class="tasks-list">
+                                    <li>✓ Soporte técnico y administración de sistemas</li>
+                                    <li>✓ Configuración y mantenimiento de equipos y redes</li>
+                                    <li>✓ Resolución de incidencias en entorno educativo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="card">
+                                <h3 class="highlight">🧹 Operario de Limpieza (Verano)</h3>
+                                <p class="date">📅 Julio 2025 - Agosto 2025</p>
+                                <p class="company"><strong>Ingesan (Grupo OHLA)</strong></p>
+                                <ul class="tasks-list">
+                                    <li>✓ Trabajo en equipo dinámico y exigente</li>
+                                    <li>✓ Compromiso y puntualidad</li>
+                                    <li>✓ Adaptabilidad a diferentes entornos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 style="margin-top:40px">Formación Académica</h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="card">
+                                <h3>📚 GS Administración de Sistemas y Redes</h3>
+                                <p class="date">📅 2025 - Cursando</p>
+                                <p class="company"><strong>Institut Puig Castellar, Barcelona</strong></p>
+                                <p>Especialización en administración de servidores, redes y seguridad informática.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="card">
+                                <h3>📚 GM Sistemas Microinformáticos y Redes</h3>
+                                <p class="date">📅 2023 - 2025</p>
+                                <p class="company"><strong>Institut Puig Castellar, Barcelona</strong></p>
+                                <p>Nota media: <span class="highlight">8.17/10</span> — Fundamentos en sistemas, redes y soporte técnico.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+
+            projects: `
+                <div class="section-header">
+                    <h2>Proyectos y Competencias</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>🎮 Connexió Luanti</h3>
+                            <span class="badge-featured">Destacado</span>
+                        </div>
+                        <p class="project-desc">Automatización y gestión de servidores de videojuegos con interfaz web. Implementación de contenedores y administración remota.</p>
+                        <div class="tech-list">
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">Podman</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <a href="https://github.com/x1b1t0/Luanti-Container-Lifter-Project" target="_blank" class="project-link" style="margin-top:16px">Ver en GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>📱 Portfolio OS</h3>
+                            <span class="badge">En progreso</span>
+                        </div>
+                        <p class="project-desc">Portafolio con diseño minimalista de terminal. Interfaz de línea de comandos con efecto glassmorphism y animaciones fluidas.</p>
+                        <div class="tech-list">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive</span>
+                        </div>
+                        <a href="https://github.com/x1b1t0/ivanvivartirado.github.io" target="_blank" class="project-link" style="margin-top:16px">Ver en GitHub →</a>
+                    </div>
+                </div>
+
+                <h2 style="margin-top:40px">Habilidades Técnicas</h2>
+                <div class="skills-matrix">
+                    <div class="skill-group">
+                        <h4>🖥️ Sistemas Operativos</h4>
+                        <ul>
+                            <li>Instalación y configuración de SO (Windows, Linux, macOS)</li>
+                            <li>Administración de usuarios y permisos</li>
+                            <li>Gestión de servicios y procesos</li>
+                            <li>Troubleshooting avanzado</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h4>🔐 Seguridad</h4>
+                        <ul>
+                            <li>Fundamentos de ciberseguridad</li>
+                            <li>Configuración de firewalls y VPN</li>
+                            <li>Análisis de vulnerabilidades básico</li>
+                            <li>Políticas de seguridad y hardening</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h4>🌐 Redes</h4>
+                        <ul>
+                            <li>Configuración de equipos Cisco</li>
+                            <li>Subnetting y routing</li>
+                            <li>Protocolos TCP/IP y DNS</li>
+                            <li>Diagnóstico con herramientas avanzadas</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+
+            contact: `
+                <div class="section-header">
+                    <h2>Conectemos</h2>
+                    <p class="subtitle">> Siempre abierto a nuevas oportunidades y colaboraciones</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>📧 Email</h3>
+                        <a href="mailto:ivaanv23@gmail.com" class="contact-link">ivaanv23@gmail.com</a>
+                    </div>
+                    <div class="contact-card">
+                        <h3>📞 Teléfono</h3>
+                        <a href="tel:+34694438227" class="contact-link">+34 694 43 82 27</a>
+                    </div>
+                    <div class="contact-card">
+                        <h3>📍 Ubicación</h3>
+                        <p class="contact-info">Santa Coloma de Gramanet<br>Barcelona, España</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>🔗 LinkedIn</h3>
+                        <a href="https://linkedin.com/in/ivanvivartirado" target="_blank" class="contact-link">linkedin.com/in/ivanvivartirado</a>
+                    </div>
+                    <div class="contact-card">
+                        <h3>💻 GitHub</h3>
+                        <a href="https://github.com/x1b1t0" target="_blank" class="contact-link">github.com/x1b1t0</a>
+                    </div>
+                    <div class="contact-card">
+                        <h3>🗣️ Idiomas</h3>
+                        <p class="contact-info">
+                            Español (Nativo)<br>
+                            Catalán (Nativo)<br>
+                            English (Intermedio B1)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <p>> ¿Quieres trabajar juntos? Envíame un email o conecta conmigo en LinkedIn.</p>
+                    <a href="mailto:ivaanv23@gmail.com" class="cta-button">Enviar Email</a>
+                </div>
+            `
+        };
+
+        function showSection(id, btn) {
+            const display = document.getElementById('display');
+            const navItems = document.querySelectorAll('.nav-item');
+
+            navItems.forEach(item => item.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+
+            display.classList.add('fade-out');
+            setTimeout(() => {
+                display.innerHTML = content[id];
+                display.classList.remove('fade-out');
+                display.scrollTop = 0;
+            }, 150);
+        }
+
+        // Mostrar home al cargar
+        showSection('home', document.querySelector('.nav-item'));
+    </script>
+</body>
+</html>
+>>>>>>> 04667f0 ({Portafolio realizado(Faltan cambios)})
