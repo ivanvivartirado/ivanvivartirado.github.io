@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ivan Vivar Tirado | Administrador de Sistemas & Ciberseguridad | Barcelona</title>
+    <title>Ivan Vivar Tirado | SysAdmin & Cybersecurity Junior | Barcelona</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230ea5e9'/><text y='.85em' font-size='42' x='50%' text-anchor='middle' font-family='monospace' font-weight='bold' fill='%23030712'>IVT</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <meta name="description" content="Ivan Vivar Tirado - Administrador de Sistemas (ASIR) en Barcelona. Especialista en redes Cisco, Linux, Docker, ciberseguridad y automatización. Certificado Cisco Cybersecurity & Networking.">
-    <meta name="keywords" content="Ivan Vivar Tirado, administrador sistemas Barcelona, ASIR, ciberseguridad junior, redes Cisco, Linux, Docker, WireGuard, soporte técnico, seguridad informática, sysadmin Barcelona, homelab">
+    <meta name="keywords" content="Ivan Vivar Tirado, administrador sistemas Barcelona, ASIR, ciberseguridad junior, redes Cisco, Linux, Docker, WireGuard, soporte técnico, seguridad informática, sysadmin Barcelona, homelab, HTB, CTF">
     <meta name="author" content="Ivan Vivar Tirado">
     <meta name="robots" content="index, follow">
     <meta property="og:url" content="https://ivanvivartirado.github.io/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Ivan Vivar Tirado | Administrador de Sistemas & Ciberseguridad | Barcelona">
+    <meta property="og:title" content="Ivan Vivar Tirado | SysAdmin & Cybersecurity Junior | Barcelona">
     <meta property="og:description" content="Administrador de Sistemas (ASIR) en Barcelona. Especialista en redes Cisco, Linux, Docker, ciberseguridad y automatización. Certificado Cisco Cybersecurity & Networking.">
     <meta property="og:image" content="https://ivanvivartirado.github.io/og-image.png">
     <meta property="og:locale" content="es_ES">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="ivanvivartirado.github.io">
     <meta property="twitter:url" content="https://ivanvivartirado.github.io/">
-    <meta name="twitter:title" content="Ivan Vivar Tirado | Administrador de Sistemas & Ciberseguridad | Barcelona">
+    <meta name="twitter:title" content="Ivan Vivar Tirado | SysAdmin & Cybersecurity Junior | Barcelona">
     <meta name="twitter:description" content="Administrador de Sistemas (ASIR) en Barcelona. Especialista en redes Cisco, Linux, Docker, ciberseguridad y automatización.">
     <meta name="twitter:image" content="https://ivanvivartirado.github.io/og-image.png">
     <script type="application/ld+json">
@@ -28,10 +28,10 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Ivan Vivar Tirado",
-        "jobTitle": "Administrador de Sistemas y Especialista en Ciberseguridad",
+        "jobTitle": "Administrador de Sistemas y Especialista en Ciberseguridad Junior",
         "url": "https://ivanvivartirado.github.io/",
         "sameAs": [
-            "https://linkedin.com/in/ivanvivartirado",
+            "https://linkedin.com/in/ivan-vivar-tirado-354445335",
             "https://github.com/ivanvivartirado"
         ],
         "address": {
@@ -40,7 +40,7 @@
             "addressRegion": "Barcelona",
             "addressCountry": "ES"
         },
-        "knowsAbout": ["Linux", "Cisco Networking", "Ciberseguridad", "Docker", "Bash/Shell", "Active Directory", "WireGuard", "SQL"],
+        "knowsAbout": ["Linux", "Cisco Networking", "Ciberseguridad", "Docker", "Bash/Shell", "Active Directory", "WireGuard", "SQL", "Python", "Nginx", "Podman"],
         "hasCredential": [
             {"@type": "EducationalOccupationalCredential", "credentialCategory": "Certificate", "name": "Cisco Cybersecurity"},
             {"@type": "EducationalOccupationalCredential", "credentialCategory": "Certificate", "name": "Cisco Networking"}
@@ -64,7 +64,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { min-height: 100%; }
+        html, body { min-height: 100%; scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -198,12 +198,14 @@
         .tasks-list { margin-top: 14px; padding-left: 0; list-style: none; line-height: 1.8; color: var(--text-dim); }
         .tasks-list li { margin-bottom: 4px; }
 
-        .projects-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-        .project-card { flex-direction: column; min-height: 220px; align-items: flex-start; }
+        .projects-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .project-card { flex-direction: column; min-height: 220px; align-items: flex-start; transition: var(--transition); }
+        .project-card:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: 0 10px 40px rgba(14,165,233,0.08); }
         .project-header { display: flex; justify-content: space-between; gap: 12px; align-items: center; width: 100%; }
 
-        .badge, .badge-featured { display: inline-flex; padding: 6px 12px; border-radius: 999px; background: rgba(14,165,233,0.15); color: var(--accent); font-size: 0.78rem; font-weight: 700; }
+        .badge, .badge-featured, .badge-ctf { display: inline-flex; padding: 6px 12px; border-radius: 999px; background: rgba(14,165,233,0.15); color: var(--accent); font-size: 0.78rem; font-weight: 700; }
         .badge-featured { background: rgba(14,165,233,0.25); }
+        .badge-ctf { background: rgba(34,197,94,0.15); color: #22c55e; }
         .project-desc { color: var(--text-dim); line-height: 1.7; margin-top: 8px; }
 
         .project-link, .contact-link, .cta-button { display: inline-block; color: var(--accent); text-decoration: none; font-weight: 600; margin-top: auto; }
@@ -224,6 +226,30 @@
         .cta-button { padding: 12px 20px; border-radius: 999px; background: rgba(14,165,233,0.17); transition: var(--transition); }
         .cta-button:hover { background: rgba(14,165,233,0.30); }
 
+        .cv-button {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; border-radius: 999px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            color: #fff; font-weight: 700; text-decoration: none;
+            transition: var(--transition); border: none; cursor: pointer;
+            font-size: 1rem; margin-top: 8px;
+        }
+        .cv-button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(14,165,233,0.3); }
+
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: var(--accent);
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .footer-bar {
+            margin-top: 30px; padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center; color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
         h2 { font-size: clamp(1.2rem, 2vw, 1.8rem); }
 
         @media (max-width: 960px) {
@@ -241,6 +267,7 @@
         }
     </style>
 <base target="_blank">
+<base target="_blank">
 </head>
 <body>
     <div class="container">
@@ -248,7 +275,7 @@
             <div class="sidebar-header">
                 <img src="ivan-vivar-tirado.jpg" alt="Ivan Vivar Tirado - Administrador de Sistemas y Ciberseguridad en Barcelona" class="avatar-photo">
                 <h1>Ivan Vivar Tirado</h1>
-                <p class="role">Administrador de Sistemas</p>
+                <p class="role">SysAdmin & Cybersec Junior</p>
             </div>
             <nav class="nav-menu">
                 <button class="nav-item active" onclick="showSection('home', this)">
@@ -265,7 +292,7 @@
                 </button>
             </nav>
             <div class="sidebar-footer">
-                <a href="https://linkedin.com/in/ivanvivartirado" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://linkedin.com/in/ivan-vivar-tirado-354445335" target="_blank" class="social-link">LinkedIn</a>
                 <a href="https://github.com/ivanvivartirado" target="_blank" class="social-link">GitHub</a>
             </div>
         </aside>
@@ -292,21 +319,22 @@
             home: `
                 <div class="section-header">
                     <h1>Ivan <span class="highlight">Vivar Tirado</span></h1>
-                    <p class="subtitle">> Administrador de Sistemas (ASIR) | Especialista en Redes y Ciberseguridad</p>
+                    <p class="subtitle typing-cursor">> Administrador de Sistemas (ASIR) | Redes Cisco & Ciberseguridad Junior</p>
                     <p class="location">📍 Santa Coloma de Gramanet, Barcelona</p>
+                    <a href="cv-ivan-vivar-tirado.pdf" download class="cv-button">📄 Descargar CV</a>
                 </div>
                 <div class="card primary-card">
                     <div class="card-header"><h3>// Sobre mí</h3></div>
-                    <p>Administrador de sistemas con base sólida en infraestructuras Linux y redes Cisco. Certificado en Cisco Cybersecurity y Networking. Apasionado por la automatización, el hardening de sistemas y la transición hacia equipos de seguridad (SOC/Blue Team).</p>
-                    <p style="margin-top:10px"><strong>Construyendo:</strong> Labs de detección de intrusos, homelab con Docker/WireGuard, y writeups de CTFs para documentar mi progreso en ciberseguridad.</p>
-                    <p style="margin-top:10px"><strong>Objetivo:</strong> Incorporarme a un equipo de infraestructura o seguridad tras finalizar ASIX, para luego especializarme con un máster en ciberseguridad.</p>
+                    <p>Administrador de sistemas con base sólida en infraestructuras Linux y redes Cisco. Certificado en <strong>Cisco Cybersecurity</strong> y <strong>Cisco Networking</strong>. Apasionado por la automatización, el hardening de sistemas y la transición hacia equipos de seguridad (SOC / Blue Team).</p>
+                    <p style="margin-top:12px"><strong>Construyendo:</strong> Labs de detección de intrusos, homelab con Docker/WireGuard, y writeups de CTFs (Hack The Box) para documentar mi progreso en ciberseguridad ofensiva y defensiva.</p>
+                    <p style="margin-top:12px"><strong>Objetivo:</strong> Incorporarme a un equipo de infraestructura o seguridad tras finalizar ASIR, para luego especializarme con un máster en ciberseguridad.</p>
                 </div>
                 <div>
-                    <h3 style="margin-bottom:16px;color:var(--accent)">// Certificaciones y Competencias</h3>
+                    <h3 style="margin-bottom:16px;color:var(--accent)">// Certificaciones</h3>
                     <div class="skills-grid">
                         <div class="skill-badge"><span class="skill-icon">🎓</span><span>EF SET English B1</span></div>
-                        <div class="skill-badge"><span class="skill-icon">🔒</span><span>Cisco: Cybersecurity</span></div>
-                        <div class="skill-badge"><span class="skill-icon">🌐</span><span>Cisco: Networking</span></div>
+                        <div class="skill-badge"><span class="skill-icon">🔒</span><span>Cisco Cybersecurity</span></div>
+                        <div class="skill-badge"><span class="skill-icon">🌐</span><span>Cisco Networking</span></div>
                         <div class="skill-badge"><span class="skill-icon">⚙️</span><span>Admin. Redes Win/Linux</span></div>
                     </div>
                 </div>
@@ -315,15 +343,19 @@
                     <div class="tech-list">
                         <span class="tech-tag">Linux</span>
                         <span class="tech-tag">Bash/Shell</span>
+                        <span class="tech-tag">Python</span>
                         <span class="tech-tag">Podman</span>
+                        <span class="tech-tag">Docker</span>
                         <span class="tech-tag">SQL</span>
                         <span class="tech-tag">Networking</span>
                         <span class="tech-tag">Cisco IOS</span>
                         <span class="tech-tag">Git</span>
                         <span class="tech-tag">Active Directory</span>
-                        <span class="tech-tag">Docker</span>
                         <span class="tech-tag">WireGuard</span>
                         <span class="tech-tag">Nginx</span>
+                        <span class="tech-tag">MariaDB</span>
+                        <span class="tech-tag">Nmap</span>
+                        <span class="tech-tag">Wireshark</span>
                     </div>
                 </div>
             `,
@@ -338,26 +370,13 @@
                         <div class="timeline-content">
                             <div class="card">
                                 <h3 class="highlight">💼 Técnico Soporte IT</h3>
-                                <p class="date">📅 Septiembre 2024 - Febrero 2025</p>
-                                <p class="company"><strong>Instituto Pompeu Fabra</strong></p>
+                                <p class="date">📅 Septiembre 2024 – Febrero 2025</p>
+                                <p class="company"><strong>Instituto Pompeu Fabra</strong> — Santa Coloma de Gramanet</p>
                                 <ul class="tasks-list">
-                                    <li>✓ Soporte técnico y administración de sistemas en entorno educativo</li>
-                                    <li>✓ Configuración y mantenimiento de equipos, redes y Active Directory</li>
-                                    <li>✓ Resolución de incidencias y gestión de tickets</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="card">
-                                <h3 class="highlight">🧹 Operario de Limpieza (Verano)</h3>
-                                <p class="date">📅 Julio 2025 - Agosto 2025</p>
-                                <p class="company"><strong>Ingesan (Grupo OHLA)</strong></p>
-                                <ul class="tasks-list">
-                                    <li>✓ Trabajo en equipo dinámico y exigente</li>
-                                    <li>✓ Compromiso, puntualidad y adaptabilidad</li>
+                                    <li>✓ Soporte técnico nivel 1/2 y administración de sistemas en entorno educativo (200+ usuarios)</li>
+                                    <li>✓ Configuración y mantenimiento de equipos, redes LAN y Active Directory (usuarios, GPOs, permisos)</li>
+                                    <li>✓ Gestión de tickets, resolución de incidencias hardware/software y mantenimiento preventivo</li>
+                                    <li>✓ Despliegue de imágenes de sistema y gestión de inventario IT</li>
                                 </ul>
                             </div>
                         </div>
@@ -370,9 +389,9 @@
                         <div class="timeline-content">
                             <div class="card">
                                 <h3>📚 GS Administración de Sistemas y Redes (ASIR)</h3>
-                                <p class="date">📅 2025 - Cursando</p>
+                                <p class="date">📅 2025 – Cursando (2º año)</p>
                                 <p class="company"><strong>Institut Puig Castellar, Barcelona</strong></p>
-                                <p>Especialización en administración de servidores, redes empresariales y seguridad informática.</p>
+                                <p>Especialización en administración de servidores, redes empresariales, seguridad informática y servicios en la nube.</p>
                             </div>
                         </div>
                     </div>
@@ -381,9 +400,9 @@
                         <div class="timeline-content">
                             <div class="card">
                                 <h3>📚 GM Sistemas Microinformáticos y Redes (SMX)</h3>
-                                <p class="date">📅 2023 - 2025</p>
+                                <p class="date">📅 2023 – 2025</p>
                                 <p class="company"><strong>Institut Puig Castellar, Barcelona</strong></p>
-                                <p>Nota media: <span class="highlight">8.17/10</span> — Fundamentos en sistemas, redes y soporte técnico.</p>
+                                <p>Nota media: <span class="highlight">8.17 / 10</span> — Fundamentos en sistemas, redes, soporte técnico y primer contacto con Linux y Cisco.</p>
                             </div>
                         </div>
                     </div>
@@ -393,6 +412,7 @@
             projects: `
                 <div class="section-header">
                     <h2>Proyectos y Labs</h2>
+                    <p class="subtitle">Repositorios activos en GitHub. Cada proyecto incluye documentación, código y aprendizajes documentados.</p>
                 </div>
                 <div class="projects-grid">
                     <div class="project-card">
@@ -400,59 +420,131 @@
                             <h3>🎮 Connexió Luanti</h3>
                             <span class="badge-featured">Destacado</span>
                         </div>
-                        <p class="project-desc">Automatización y gestión de servidores de videojuegos con interfaz web. Implementación de contenedores Podman, administración remota y base de datos SQL.</p>
+                        <p class="project-desc">Automatización y gestión de servidores de videojuegos con interfaz web. Implementación de contenedores Podman, administración remota vía SSH, base de datos SQL para estadísticas y scripts Python para mantenimiento automatizado.</p>
                         <div class="tech-list">
                             <span class="tech-tag">Linux</span>
                             <span class="tech-tag">Bash</span>
                             <span class="tech-tag">Podman</span>
                             <span class="tech-tag">SQL</span>
                             <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Nginx</span>
                         </div>
                         <a href="https://github.com/ivanvivartirado/Luanti-Container-Lifter-Project" target="_blank" class="project-link" style="margin-top:16px">Ver en GitHub →</a>
                     </div>
+
                     <div class="project-card">
                         <div class="project-header">
                             <h3>🏠 Homelab Personal</h3>
                             <span class="badge">En progreso</span>
                         </div>
-                        <p class="project-desc">Infraestructura autoalojada para aprender ciberseguridad práctica: VPN WireGuard, proxy inverso Nginx, base de datos MariaDB, contenedores Docker y monitorización.</p>
+                        <p class="project-desc">Infraestructura autoalojada en casa para aprender ciberseguridad práctica: VPN WireGuard para acceso remoto seguro, proxy inverso Nginx con SSL (Let's Encrypt), base de datos MariaDB, contenedores Docker/Podman y monitorización básica con logs centralizados.</p>
                         <div class="tech-list">
                             <span class="tech-tag">Docker</span>
                             <span class="tech-tag">WireGuard</span>
                             <span class="tech-tag">Nginx</span>
                             <span class="tech-tag">MariaDB</span>
                             <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">Bash</span>
                         </div>
                         <a href="https://github.com/ivanvivartirado/homelab-personal" target="_blank" class="project-link" style="margin-top:16px">Ver en GitHub →</a>
                     </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>🛡️ WinGuard</h3>
+                            <span class="badge">Python</span>
+                        </div>
+                        <p class="project-desc">Herramienta de protección y monitorización para sistemas Windows. Análisis de procesos en ejecución, detección de cambios en archivos críticos y generación de alertas básicas. Proyecto orientado a entender mecanismos de defensa endpoint.</p>
+                        <div class="tech-list">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Windows API</span>
+                            <span class="tech-tag">Seguridad</span>
+                        </div>
+                        <a href="https://github.com/ivanvivartirado/WinGuard" target="_blank" class="project-link" style="margin-top:16px">Ver en GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>🔍 VulnCheck</h3>
+                            <span class="badge">Python</span>
+                        </div>
+                        <p class="project-desc">Analizador de vulnerabilidades que consulta bases de datos públicas (CVE) a partir de versiones de software detectadas. Útil para auditorías rápidas de seguridad en entornos controlados. Aprendizaje de APIs REST y parsing de datos.</p>
+                        <div class="tech-list">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">API REST</span>
+                            <span class="tech-tag">CVE</span>
+                            <span class="tech-tag">Seguridad</span>
+                        </div>
+                        <a href="https://github.com/ivanvivartirado/VulnCheck" target="_blank" class="project-link" style="margin-top:16px">Ver en GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>🐍 Python Learning</h3>
+                            <span class="badge">Educativo</span>
+                        </div>
+                        <p class="project-desc">Repositorio de aprendizaje donde documento mi progreso en Python: scripts de automatización sysadmin, manipulación de archivos, networking básico con sockets, y ejercicios orientados a ciberseguridad (fuerza bruta, escaneo de puertos básico).</p>
+                        <div class="tech-list">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Automatización</span>
+                            <span class="tech-tag">Networking</span>
+                        </div>
+                        <a href="https://github.com/ivanvivartirado/python-learning" target="_blank" class="project-link" style="margin-top:16px">Ver en GitHub →</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>🚩 HTB Writeups</h3>
+                            <span class="badge-ctf">CTF</span>
+                        </div>
+                        <p class="project-desc">Writeups documentados de máquinas de Hack The Box. Metodología paso a paso: reconocimiento, enumeración, explotación y post-explotación. Enfoque en aprender técnicas reales de pentesting y documentar el proceso de forma profesional.</p>
+                        <div class="tech-list">
+                            <span class="tech-tag">Pentesting</span>
+                            <span class="tech-tag">Reconocimiento</span>
+                            <span class="tech-tag">Exploit</span>
+                            <span class="tech-tag">Writeups</span>
+                        </div>
+                        <a href="https://github.com/ivanvivartirado/HTB-Writeups" target="_blank" class="project-link" style="margin-top:16px">Ver en GitHub →</a>
+                    </div>
                 </div>
-                <h2 style="margin-top:40px">Habilidades Técnicas</h2>
+
+                <h2 style="margin-top:40px">Habilidades Técnicas Detalladas</h2>
                 <div class="skills-matrix">
                     <div class="skill-group">
                         <h4>🖥️ Sistemas Operativos</h4>
                         <ul>
-                            <li>Instalación y configuración de SO (Windows, Linux, macOS)</li>
-                            <li>Administración de usuarios, permisos y políticas de grupo</li>
-                            <li>Gestión de servicios, procesos y automatización con cron/systemd</li>
-                            <li>Troubleshooting avanzado y diagnóstico de rendimiento</li>
+                            <li>Administración de servidores Linux (Ubuntu, Debian) y Windows Server</li>
+                            <li>Gestión de usuarios, permisos, políticas de grupo (GPO) y Active Directory</li>
+                            <li>Automatización de tareas con Bash, cron, systemd y scripts Python</li>
+                            <li>Troubleshooting avanzado, diagnóstico de rendimiento y logs</li>
                         </ul>
                     </div>
                     <div class="skill-group">
                         <h4>🔐 Seguridad</h4>
                         <ul>
                             <li>Fundamentos de ciberseguridad (Cisco Cybersecurity)</li>
-                            <li>Configuración de firewalls, VPNs y segmentación de red</li>
-                            <li>Hardening básico de sistemas Linux y Windows</li>
-                            <li>Análisis de vulnerabilidades y gestión de parches</li>
+                            <li>Configuración de firewalls (iptables/ufw), VPNs (WireGuard) y segmentación</li>
+                            <li>Hardening de sistemas Linux y Windows Server</li>
+                            <li>Análisis de vulnerabilidades, gestión de parches y auditorías básicas</li>
+                            <li>Prácticas en CTFs (Hack The Box) — reconocimiento y explotación</li>
                         </ul>
                     </div>
                     <div class="skill-group">
                         <h4>🌐 Redes</h4>
                         <ul>
-                            <li>Configuración de equipos Cisco (routers, switches)</li>
-                            <li>Subnetting, routing estático/dinámico y VLANs</li>
-                            <li>Protocolos TCP/IP, DNS, DHCP, NAT</li>
-                            <li>Diagnóstico con Wireshark, ping, traceroute, nmap</li>
+                            <li>Configuración de equipos Cisco (routers, switches, VLANs, ACLs)</li>
+                            <li>Subnetting, routing estático/dinámico (OSPF, EIGRP básico)</li>
+                            <li>Protocolos TCP/IP, DNS, DHCP, NAT, HTTP/S</li>
+                            <li>Diagnóstico con Wireshark, ping, traceroute, nmap, netstat</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h4>☁️ Virtualización & Contenedores</h4>
+                        <ul>
+                            <li>Docker y Podman: creación, gestión y orquestación básica</li>
+                            <li>Despliegue de servicios web con Nginx como proxy inverso</li>
+                            <li>Bases de datos: MariaDB/MySQL, gestión de usuarios y backups</li>
+                            <li>Homelab físico: planificación, montaje y mantenimiento</li>
                         </ul>
                     </div>
                 </div>
@@ -461,7 +553,8 @@
             contact: `
                 <div class="section-header">
                     <h2>Conectemos</h2>
-                    <p class="subtitle">> Siempre abierto a nuevas oportunidades, colaboraciones y proyectos de ciberseguridad</p>
+                    <p class="subtitle">> Siempre abierto a oportunidades de prácticas (FCT), colaboraciones y proyectos de ciberseguridad</p>
+                    <a href="cv-ivan-vivar-tirado.pdf" download class="cv-button">📄 Descargar CV</a>
                 </div>
                 <div class="contact-grid">
                     <div class="contact-card">
@@ -478,7 +571,7 @@
                     </div>
                     <div class="contact-card">
                         <h3>🔗 LinkedIn</h3>
-                        <a href="https://linkedin.com/in/ivanvivartirado" target="_blank" class="contact-link">linkedin.com/in/ivanvivartirado</a>
+                        <a href="https://linkedin.com/in/ivan-vivar-tirado-354445335" target="_blank" class="contact-link">linkedin.com/in/ivan-vivar-tirado</a>
                     </div>
                     <div class="contact-card">
                         <h3>💻 GitHub</h3>
@@ -489,13 +582,16 @@
                         <p class="contact-info">
                             Español (Nativo)<br>
                             Catalán (Nativo)<br>
-                            English (Intermedio B1)
+                            Inglés (Intermedio B1)
                         </p>
                     </div>
                 </div>
                 <div class="cta-section">
-                    <p>> ¿Buscas un perfil junior con ganas de crecer en ciberseguridad? Envíame un email o conecta conmigo en LinkedIn.</p>
+                    <p>> ¿Buscas un perfil junior con ganas de crecer en infraestructura o ciberseguridad? Envíame un email o conecta conmigo en LinkedIn.</p>
                     <a href="mailto:ivaanv23@gmail.com" class="cta-button">Enviar Email</a>
+                </div>
+                <div class="footer-bar">
+                    <p>© 2026 Ivan Vivar Tirado. Construido con 💻 y mucho café.</p>
                 </div>
             `
         };
