@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+html_content = '''<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +8,8 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230ea5e9'/><text y='.85em' font-size='42' x='50%' text-anchor='middle' font-family='monospace' font-weight='bold' fill='%23030712'>IVT</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <meta name="description" content="Ivan Vivar Tirado - Administrador de Sistemas (ASIR) en Barcelona. Especialista en redes Cisco, Linux, Docker, ciberseguridad y automatización. Certificado Cisco Cybersecurity & Networking.">
-    <meta name="keywords" content="Ivan Vivar Tirado, administrador sistemas Barcelona, ASIR, ciberseguridad junior, redes Cisco, Linux, Docker, WireGuard, soporte técnico, seguridad informática, sysadmin Barcelona, homelab, HTB, CTF">
+    <meta name="description" content="Ivan Vivar Tirado - Administrador de Sistemas (ASIR) en Barcelona. Especialista en redes Cisco, Linux, Docker, ciberseguridad y automatización. Certificado Cisco Cybersecurity & Networking. Homelab activo con Proxmox.">
+    <meta name="keywords" content="Ivan Vivar Tirado, administrador sistemas Barcelona, ASIR, ciberseguridad junior, redes Cisco, Linux, Docker, WireGuard, soporte técnico, seguridad informática, sysadmin Barcelona, homelab, HTB, CTF, Proxmox, Fail2ban">
     <meta name="author" content="Ivan Vivar Tirado">
     <meta name="robots" content="index, follow">
     <meta property="og:url" content="https://ivanvivartirado.github.io/">
@@ -31,7 +32,7 @@
         "jobTitle": "Administrador de Sistemas y Especialista en Ciberseguridad Junior",
         "url": "https://ivanvivartirado.github.io/",
         "sameAs": [
-            "https://linkedin.com/in/ivan-vivar-tirado-354445335",
+            "https://linkedin.com/in/ivanvivartirado",
             "https://github.com/ivanvivartirado"
         ],
         "address": {
@@ -40,7 +41,7 @@
             "addressRegion": "Barcelona",
             "addressCountry": "ES"
         },
-        "knowsAbout": ["Linux", "Cisco Networking", "Ciberseguridad", "Docker", "Bash/Shell", "Active Directory", "WireGuard", "SQL", "Python", "Nginx", "Podman"],
+        "knowsAbout": ["Linux", "Cisco Networking", "Ciberseguridad", "Docker", "Bash/Shell", "Active Directory", "WireGuard", "SQL", "Python", "Nginx", "Podman", "Proxmox", "Fail2ban"],
         "hasCredential": [
             {"@type": "EducationalOccupationalCredential", "credentialCategory": "Certificate", "name": "Cisco Cybersecurity"},
             {"@type": "EducationalOccupationalCredential", "credentialCategory": "Certificate", "name": "Cisco Networking"}
@@ -203,9 +204,10 @@
         .project-card:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: 0 10px 40px rgba(14,165,233,0.08); }
         .project-header { display: flex; justify-content: space-between; gap: 12px; align-items: center; width: 100%; }
 
-        .badge, .badge-featured, .badge-ctf { display: inline-flex; padding: 6px 12px; border-radius: 999px; background: rgba(14,165,233,0.15); color: var(--accent); font-size: 0.78rem; font-weight: 700; }
+        .badge, .badge-featured, .badge-ctf, .badge-web { display: inline-flex; padding: 6px 12px; border-radius: 999px; background: rgba(14,165,233,0.15); color: var(--accent); font-size: 0.78rem; font-weight: 700; }
         .badge-featured { background: rgba(14,165,233,0.25); }
         .badge-ctf { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .badge-web { background: rgba(168,85,247,0.15); color: #a855f7; }
         .project-desc { color: var(--text-dim); line-height: 1.7; margin-top: 8px; }
 
         .project-link, .contact-link, .cta-button { display: inline-block; color: var(--accent); text-decoration: none; font-weight: 600; margin-top: auto; }
@@ -250,6 +252,13 @@
             font-size: 0.85rem;
         }
 
+        .learning-grid { display: grid; gap: 14px; margin-top: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+        .learning-card { padding: 18px; border-radius: 18px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+        .learning-card h4 { color: var(--accent); margin-bottom: 8px; font-size: 0.95rem; }
+        .learning-card p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; }
+        .learning-card a { color: var(--accent); text-decoration: none; }
+        .learning-card a:hover { text-decoration: underline; }
+
         h2 { font-size: clamp(1.2rem, 2vw, 1.8rem); }
 
         @media (max-width: 960px) {
@@ -263,10 +272,9 @@
             .window-header { flex-direction: column; align-items: flex-start; }
             .nav-item { font-size: 0.93rem; }
             .social-link { flex: 1 1 100%; }
-            .skills-grid, .projects-grid, .contact-grid, .timeline { grid-template-columns: 1fr; }
+            .skills-grid, .projects-grid, .contact-grid, .timeline, .learning-grid { grid-template-columns: 1fr; }
         }
     </style>
-<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -287,12 +295,15 @@
                 <button class="nav-item" onclick="showSection('projects', this)">
                     <span class="icon">◆</span><span>Proyectos</span>
                 </button>
+                <button class="nav-item" onclick="showSection('learning', this)">
+                    <span class="icon">◆</span><span>Aprendizaje</span>
+                </button>
                 <button class="nav-item" onclick="showSection('contact', this)">
                     <span class="icon">◆</span><span>Contacto</span>
                 </button>
             </nav>
             <div class="sidebar-footer">
-                <a href="https://linkedin.com/in/ivan-vivar-tirado-354445335" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://linkedin.com/in/ivanvivartirado" target="_blank" class="social-link">LinkedIn</a>
                 <a href="https://github.com/ivanvivartirado" target="_blank" class="social-link">GitHub</a>
             </div>
         </aside>
@@ -325,8 +336,9 @@
                 </div>
                 <div class="card primary-card">
                     <div class="card-header"><h3>// Sobre mí</h3></div>
-                    <p>Administrador de sistemas con base sólida en infraestructuras Linux y redes Cisco. Certificado en <strong>Cisco Cybersecurity</strong> y <strong>Cisco Networking</strong>. Apasionado por la automatización, el hardening de sistemas y la transición hacia equipos de seguridad (SOC / Blue Team).</p>
-                    <p style="margin-top:12px"><strong>Construyendo:</strong> Labs de detección de intrusos, homelab con Docker/WireGuard, y writeups de CTFs (Hack The Box) para documentar mi progreso en ciberseguridad ofensiva y defensiva.</p>
+                    <p>Administrador de sistemas con enfoque práctico en <strong>ciberseguridad</strong> y administración de infraestructuras. Certificado en <strong>Cisco Cybersecurity</strong> y <strong>Cisco Networking</strong>. Apasionado por la automatización, el hardening de sistemas y la transición hacia equipos de seguridad (SOC / Blue Team).</p>
+                    <p style="margin-top:12px"><strong>Homelab activo:</strong> Servidor Proxmox/Debian con Uptime Kuma, MariaDB, Nginx, WireGuard VPN, Dozzle y Fail2ban. Automatizo monitorización con scripts Python que consumen APIs y generan alertas.</p>
+                    <p style="margin-top:12px"><strong>Construyendo:</strong> Labs de detección de intrusos, writeups de CTFs (Hack The Box), y un directorio de herramientas de IA (<a href="https://iaboost.es" target="_blank" style="color:var(--accent)">iaboost.es</a>) para la comunidad hispanohablante.</p>
                     <p style="margin-top:12px"><strong>Objetivo:</strong> Incorporarme a un equipo de infraestructura o seguridad tras finalizar ASIR, para luego especializarme con un máster en ciberseguridad.</p>
                 </div>
                 <div>
@@ -346,6 +358,8 @@
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Podman</span>
                         <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Docker Compose</span>
+                        <span class="tech-tag">Proxmox</span>
                         <span class="tech-tag">SQL</span>
                         <span class="tech-tag">Networking</span>
                         <span class="tech-tag">Cisco IOS</span>
@@ -354,8 +368,11 @@
                         <span class="tech-tag">WireGuard</span>
                         <span class="tech-tag">Nginx</span>
                         <span class="tech-tag">MariaDB</span>
+                        <span class="tech-tag">Fail2ban</span>
                         <span class="tech-tag">Nmap</span>
                         <span class="tech-tag">Wireshark</span>
+                        <span class="tech-tag">tcpdump</span>
+                        <span class="tech-tag">Uptime Kuma</span>
                     </div>
                 </div>
             `,
@@ -371,12 +388,27 @@
                             <div class="card">
                                 <h3 class="highlight">💼 Técnico Soporte IT</h3>
                                 <p class="date">📅 Septiembre 2024 – Febrero 2025</p>
-                                <p class="company"><strong>Instituto Pompeu Fabra</strong> — Santa Coloma de Gramanet</p>
+                                <p class="company"><strong>Instituto Pompeu Fabra</strong> — Santa Coloma de Gramanet, Barcelona</p>
                                 <ul class="tasks-list">
                                     <li>✓ Soporte técnico nivel 1/2 y administración de sistemas en entorno educativo (200+ usuarios)</li>
                                     <li>✓ Configuración y mantenimiento de equipos, redes LAN y Active Directory (usuarios, GPOs, permisos)</li>
                                     <li>✓ Gestión de tickets, resolución de incidencias hardware/software y mantenimiento preventivo</li>
                                     <li>✓ Despliegue de imágenes de sistema y gestión de inventario IT</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="card">
+                                <h3 class="highlight">🇩🇪 Prácticas / Experiencia Internacional</h3>
+                                <p class="date">📅 Landratsamt Reutlingen — Reutlingen, Alemania</p>
+                                <p class="company"><strong>Administración Pública del Distrito de Reutlingen</strong></p>
+                                <ul class="tasks-list">
+                                    <li>✓ Experiencia laboral en entorno administrativo alemán</li>
+                                    <li>✓ Trabajo en equipo multicultural y adaptabilidad a nuevos entornos</li>
+                                    <li>✓ Desarrollo de competencias transversales: puntualidad, organización y comunicación profesional</li>
                                 </ul>
                             </div>
                         </div>
@@ -437,14 +469,16 @@
                             <h3>🏠 Homelab Personal</h3>
                             <span class="badge">En progreso</span>
                         </div>
-                        <p class="project-desc">Infraestructura autoalojada en casa para aprender ciberseguridad práctica: VPN WireGuard para acceso remoto seguro, proxy inverso Nginx con SSL (Let's Encrypt), base de datos MariaDB, contenedores Docker/Podman y monitorización básica con logs centralizados.</p>
+                        <p class="project-desc">Infraestructura autoalojada en casa sobre Proxmox/Debian: VPN WireGuard para acceso remoto seguro, proxy inverso Nginx con SSL (Let's Encrypt), MariaDB, contenedores Docker/Podman, monitorización con Uptime Kuma, visualización de logs con Dozzle, y protección con Fail2ban.</p>
                         <div class="tech-list">
+                            <span class="tech-tag">Proxmox</span>
                             <span class="tech-tag">Docker</span>
                             <span class="tech-tag">WireGuard</span>
                             <span class="tech-tag">Nginx</span>
                             <span class="tech-tag">MariaDB</span>
-                            <span class="tech-tag">Linux</span>
-                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">Uptime Kuma</span>
+                            <span class="tech-tag">Dozzle</span>
+                            <span class="tech-tag">Fail2ban</span>
                         </div>
                         <a href="https://github.com/ivanvivartirado/homelab-personal" target="_blank" class="project-link" style="margin-top:16px">Ver en GitHub →</a>
                     </div>
@@ -506,6 +540,20 @@
                         </div>
                         <a href="https://github.com/ivanvivartirado/HTB-Writeups" target="_blank" class="project-link" style="margin-top:16px">Ver en GitHub →</a>
                     </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>🤖 IABoost</h3>
+                            <span class="badge-web">Web</span>
+                        </div>
+                        <p class="project-desc">Directorio de herramientas de IA gratuitas con tutoriales orientado a pymes y profesionales hispanohablantes. Side project para explorar el ecosistema de IA aplicada a automatización y productividad.</p>
+                        <div class="tech-list">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">IA</span>
+                            <span class="tech-tag">Side Project</span>
+                        </div>
+                        <a href="https://iaboost.es" target="_blank" class="project-link" style="margin-top:16px">Visitar iaboost.es →</a>
+                    </div>
                 </div>
 
                 <h2 style="margin-top:40px">Habilidades Técnicas Detalladas</h2>
@@ -513,10 +561,10 @@
                     <div class="skill-group">
                         <h4>🖥️ Sistemas Operativos</h4>
                         <ul>
-                            <li>Administración de servidores Linux (Ubuntu, Debian) y Windows Server</li>
+                            <li>Administración de servidores Linux (Debian, Ubuntu) y Windows Server</li>
                             <li>Gestión de usuarios, permisos, políticas de grupo (GPO) y Active Directory</li>
                             <li>Automatización de tareas con Bash, cron, systemd y scripts Python</li>
-                            <li>Troubleshooting avanzado, diagnóstico de rendimiento y logs</li>
+                            <li>Troubleshooting avanzado, diagnóstico de rendimiento y análisis de logs</li>
                         </ul>
                     </div>
                     <div class="skill-group">
@@ -526,7 +574,8 @@
                             <li>Configuración de firewalls (iptables/ufw), VPNs (WireGuard) y segmentación</li>
                             <li>Hardening de sistemas Linux y Windows Server</li>
                             <li>Análisis de vulnerabilidades, gestión de parches y auditorías básicas</li>
-                            <li>Prácticas en CTFs (Hack The Box) — reconocimiento y explotación</li>
+                            <li>Protección contra intrusiones con Fail2ban y monitorización de logs</li>
+                            <li>Prácticas en CTFs (Hack The Box, TryHackMe) — reconocimiento y explotación</li>
                         </ul>
                     </div>
                     <div class="skill-group">
@@ -535,18 +584,67 @@
                             <li>Configuración de equipos Cisco (routers, switches, VLANs, ACLs)</li>
                             <li>Subnetting, routing estático/dinámico (OSPF, EIGRP básico)</li>
                             <li>Protocolos TCP/IP, DNS, DHCP, NAT, HTTP/S</li>
-                            <li>Diagnóstico con Wireshark, ping, traceroute, nmap, netstat</li>
+                            <li>Diagnóstico con Wireshark, tcpdump, ping, traceroute, nmap, netstat</li>
                         </ul>
                     </div>
                     <div class="skill-group">
                         <h4>☁️ Virtualización & Contenedores</h4>
                         <ul>
-                            <li>Docker y Podman: creación, gestión y orquestación básica</li>
+                            <li>Proxmox VE: virtualización de servidores y gestión de VMs</li>
+                            <li>Docker y Docker Compose: creación, gestión y orquestación de servicios</li>
+                            <li>Podman: contenedores rootless y compatibilidad con Docker</li>
                             <li>Despliegue de servicios web con Nginx como proxy inverso</li>
                             <li>Bases de datos: MariaDB/MySQL, gestión de usuarios y backups</li>
-                            <li>Homelab físico: planificación, montaje y mantenimiento</li>
+                            <li>Monitorización: Uptime Kuma, Dozzle para logs en tiempo real</li>
                         </ul>
                     </div>
+                </div>
+            `,
+
+            learning: `
+                <div class="section-header">
+                    <h2>Aprendizaje Continuo</h2>
+                    <p class="subtitle">> Recursos, plataformas y comunidades donde aprendo y practico cada semana</p>
+                </div>
+                <div class="card primary-card">
+                    <div class="card-header"><h3>// Plataformas de práctica</h3></div>
+                    <p>Uso activamente estas plataformas para mantenerme en forma técnica:</p>
+                    <ul class="tasks-list" style="margin-top:12px">
+                        <li>✓ <strong>Hack The Box</strong> — Máquinas reales de pentesting. Documento cada writeup en GitHub.</li>
+                        <li>✓ <strong>TryHackMe</strong> — Labs guiados de hacking y seguridad. Perfecto para empezar desde cero.</li>
+                        <li>✓ <strong>OverTheWire</strong> — Wargames de Linux y scripting. Aprendí la terminal de verdad resolviendo retos.</li>
+                        <li>✓ <strong>Proxmox Homelab</strong> — Mi laboratorio físico donde pruebo todo antes de tocar producción.</li>
+                    </ul>
+                </div>
+                <div class="learning-grid">
+                    <div class="learning-card">
+                        <h4>🎥 S4vitar (YouTube)</h4>
+                        <p>El mejor canal en español de ciberseguridad. Máquinas de Hack The Box explicadas paso a paso con metodología profesional.</p>
+                    </div>
+                    <div class="learning-card">
+                        <h4>💬 r/sysadmin & r/netsec</h4>
+                        <p>Comunidades de Reddit donde profesionales comparten problemas reales y soluciones reales del día a día.</p>
+                    </div>
+                    <div class="learning-card">
+                        <h4>📚 DevDocs</h4>
+                        <p>Toda la documentación de todos los lenguajes en un solo sitio. Sin publicidad, rápido y siempre actualizado. <a href="https://devdocs.io" target="_blank">devdocs.io</a></p>
+                    </div>
+                    <div class="learning-card">
+                        <h4>🔍 Explainshell</h4>
+                        <p>Pegas cualquier comando de Linux y te explica cada parte. Imprescindible cuando encuentras un comando raro en un script. <a href="https://explainshell.com" target="_blank">explainshell.com</a></p>
+                    </div>
+                    <div class="learning-card">
+                        <h4>⚙️ Crontab Guru</h4>
+                        <p>Crea tareas programadas sin volverte loco con la sintaxis. Visual y rapidísimo. <a href="https://crontab.guru" target="_blank">crontab.guru</a></p>
+                    </div>
+                    <div class="learning-card">
+                        <h4>🐳 Dozzle</h4>
+                        <p>Visualiza logs de todos tus contenedores Docker en tiempo real sin tocar terminal. Ya lo uso en mi homelab. <a href="https://dozzle.dev" target="_blank">dozzle.dev</a></p>
+                    </div>
+                </div>
+                <div class="cta-section" style="margin-top:24px">
+                    <p>> Todo lo que aprendo lo documento en GitHub y en publicaciones de LinkedIn. Sígueme para ver mi progreso semana a semana.</p>
+                    <a href="https://linkedin.com/in/ivanvivartirado" target="_blank" class="cta-button">Seguir en LinkedIn</a>
                 </div>
             `,
 
@@ -571,7 +669,7 @@
                     </div>
                     <div class="contact-card">
                         <h3>🔗 LinkedIn</h3>
-                        <a href="https://linkedin.com/in/ivan-vivar-tirado-354445335" target="_blank" class="contact-link">linkedin.com/in/ivan-vivar-tirado</a>
+                        <a href="https://linkedin.com/in/ivanvivartirado" target="_blank" class="contact-link">linkedin.com/in/ivanvivartirado</a>
                     </div>
                     <div class="contact-card">
                         <h3>💻 GitHub</h3>
@@ -612,4 +710,10 @@
         showSection('home', document.querySelector('.nav-item'));
     </script>
 </body>
-</html>
+</html>'''
+
+with open('/mnt/agents/output/index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("✅ Archivo actualizado correctamente")
+print(f"📄 Tamaño: {len(html_content)} caracteres")
