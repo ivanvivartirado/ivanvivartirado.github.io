@@ -1,5 +1,4 @@
-
-html_content = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -275,6 +274,7 @@ html_content = '''<!DOCTYPE html>
             .skills-grid, .projects-grid, .contact-grid, .timeline, .learning-grid { grid-template-columns: 1fr; }
         }
     </style>
+<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -710,10 +710,4 @@ html_content = '''<!DOCTYPE html>
         showSection('home', document.querySelector('.nav-item'));
     </script>
 </body>
-</html>'''
-
-with open('/mnt/agents/output/index.html', 'w', encoding='utf-8') as f:
-    f.write(html_content)
-
-print("✅ Archivo actualizado correctamente")
-print(f"📄 Tamaño: {len(html_content)} caracteres")
+</html>
