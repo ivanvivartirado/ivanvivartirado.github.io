@@ -487,10 +487,10 @@
 
                     <div class="project-card">
                         <div class="project-header">
-                            <h3>🏠 Homelab Personal</h3>
+                            <h3>🏠 Nexus Node (homelab)</h3>
                             <span class="badge">En progreso</span>
                         </div>
-                        <p class="project-desc">Infraestructura autoalojada en casa sobre Proxmox/Debian: VPN WireGuard para acceso remoto seguro, proxy inverso Nginx, MariaDB, contenedores Docker/Podman, monitorización con Uptime Kuma, visualización de logs con Dozzle (con login) y protección con Fail2ban. Secretos fuera del repo en un .env y la base de datos sin puertos expuestos, tras auditar mi propio docker-compose.</p>
+                        <p class="project-desc">Infraestructura autoalojada en casa sobre Proxmox/Debian: VPN WireGuard para acceso remoto seguro, proxy inverso Nginx, MariaDB, contenedores Docker/Podman, monitorización con Uptime Kuma, visualización de logs con Dozzle (con login) y protección con Fail2ban. Secretos fuera del repo en un .env y la base de datos sin puertos expuestos, tras auditar mi propio docker-compose. Cada push pasa por una CI en GitHub Actions (Compose, ShellCheck y Gitleaks).</p>
                         <div class="tech-list">
                             <span class="tech-tag">Proxmox</span>
                             <span class="tech-tag">Docker</span>
@@ -501,7 +501,10 @@
                             <span class="tech-tag">Dozzle</span>
                             <span class="tech-tag">Fail2ban</span>
                         </div>
-                        <a href="https://github.com/ivanvivartirado/homelab-personal" target="_blank" class="project-link" style="margin-top:16px">Ver en GitHub →</a>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px">
+                            <a href="https://ivanvivartirado.github.io/nexus-node/" target="_blank" class="project-link">Ver la web del proyecto →</a>
+                            <a href="https://github.com/ivanvivartirado/nexus-node" target="_blank" class="project-link">Ver en GitHub →</a>
+                        </div>
                     </div>
 
                     <div class="project-card">
